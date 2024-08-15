@@ -36,14 +36,14 @@ def mask_account_cart(type_and_number_cart: str) -> str:
                 name_and_number = list()
         else:
             continue
-    ready_data = ""
+    ready_date = ""
     for values_cart in new_list:
         translate_into_a_line = " ".join(values_cart)
-        ready_data += (translate_into_a_line + "\n")
-    return ready_data
+        ready_date += (translate_into_a_line + "\n")
+    return ready_date
 
 
-def get_data(raw_date: str) -> str:
+def get_date(raw_date: str) -> str:
     """The function that accepts date data outputs only the date"""
 
     slice_date = raw_date[:10]
@@ -61,6 +61,6 @@ def get_data(raw_date: str) -> str:
 
 if __name__ == "__main__":
     print(mask_account_cart(cart_and_account_numbers))
-    print(get_data(date))
+    print(get_date(date))
 
 # Add commit adjustments
