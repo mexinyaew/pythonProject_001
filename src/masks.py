@@ -12,3 +12,5 @@ def get_mask_account(acc_num: str) -> str | None:
         return f"{'*' * 2} {acc_num[-4::]}"
     else:
         return None
+
+# Add commit adjustments
