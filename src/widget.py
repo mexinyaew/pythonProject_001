@@ -2,7 +2,7 @@ from src.masks import get_mask_card_number, get_mask_account
 
 
 # Examples of input data
-cart_and_account_numbers = """ Maestro 1596837868705199
+card_and_account_numbers = """ Maestro 1596837868705199
 Счет 64686473678894779589
 MasterCard 7158300734726758
 Счет 35383033474447895560
@@ -14,19 +14,19 @@ Visa Gold 5999414228426353
 date = "2018-07-11T02:26:18.671407"
 
 
-def mask_account_cart(type_and_number_cart: str) -> str:
+def mask_account_cart(type_and_number_card: str) -> str:
     """The function has one argument — a string containing the type and number of the card or account."""
 
-    split_numbers_cart = type_and_number_cart.split()
+    split_numbers_card = type_and_number_card.split()
     new_list = []
     name_and_number = []
-    for numb_or_name in split_numbers_cart:
+    for numb_or_name in split_numbers_card:
         if numb_or_name.isalpha():
             name_and_number.append(numb_or_name)
         elif numb_or_name.isdigit():
             if len(numb_or_name) == 16:
-                masks_numb_cart = get_mask_card_number(numb_or_name)
-                name_and_number.append(masks_numb_cart)
+                masks_numb_card = get_mask_card_number(numb_or_name)
+                name_and_number.append(masks_numb_card)
                 new_list.append(name_and_number)
                 name_and_number = list()
             elif len(numb_or_name) == 20:
@@ -37,8 +37,8 @@ def mask_account_cart(type_and_number_cart: str) -> str:
         else:
             continue
     ready_date = ""
-    for values_cart in new_list:
-        translate_into_a_line = " ".join(values_cart)
+    for values_card in new_list:
+        translate_into_a_line = " ".join(values_card)
         ready_date += (translate_into_a_line + "\n")
     return ready_date
 
@@ -60,7 +60,7 @@ def get_date(raw_date: str) -> str:
 
 
 if __name__ == "__main__":
-    print(mask_account_cart(cart_and_account_numbers))
+    print(mask_account_cart(card_and_account_numbers))
     print(get_date(date))
 
 # Add commit adjustments
