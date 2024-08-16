@@ -14,7 +14,7 @@ Visa Gold 5999414228426353
 date = "2018-07-11T02:26:18.671407"
 
 
-def mask_account_cart(type_and_number_card: str) -> str:
+def mask_account_card(type_and_number_card: str) -> str:
     """The function has one argument — a string containing the type and number of the card or account."""
 
     split_numbers_card = type_and_number_card.split()
@@ -60,7 +60,7 @@ def get_date(raw_date: str) -> str:
 
 
 if __name__ == "__main__":
-    print(mask_account_cart(card_and_account_numbers))
+    print(mask_account_card(card_and_account_numbers))
     print(get_date(date))
 
 # Add commit adjustments
