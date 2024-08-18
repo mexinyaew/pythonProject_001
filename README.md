@@ -4,5 +4,3 @@ Educational project for the study of "Python"
 ## Installation Instructions
 Copy the files to your computer. Run using PyCharm
 ### Examples of working with functions.
-
-# checking for changes
